@@ -117,5 +117,23 @@ tab-group {
 
 
 @media not (-moz-bool-pref: "tab.groups.add-arrow-first") {
-  /* more to come ... */
+  tab-group {
+    &:not([split-view-group], [header]) {
+
+
+      @media (-moz-bool-pref: "zen.view.sidebar-expanded") {
+        @media (-moz-bool-pref: "tab.groups.add-arrow") {
+
+          & .tab-group-label-container {
+            padding-inline-start: 14px;
+
+            & > label::after {
+              right: auto !important;
+              left: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
