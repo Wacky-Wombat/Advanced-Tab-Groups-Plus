@@ -3,7 +3,7 @@
 /* ====== V1.0.0 ====== */
 
 
-:root {
+/*:root {*/
   /* starting from root for highest specificity */
 
   /*** -----------------------------------------------------------------------
@@ -116,7 +116,7 @@
       }
     }
   }
-}
+/*}*/
 
 
 @media not (-moz-bool-pref: "tab.groups.add-arrow-first") {}
