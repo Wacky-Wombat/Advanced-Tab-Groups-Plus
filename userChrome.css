@@ -116,7 +116,7 @@ tab-group {
 }
 
 
-@media not (-moz-bool-pref: "tab.groups.add-arrow-first") {
+@media (-moz-bool-pref: "tab.groups.add-arrow-first") {
   tab-group {
     &:not([split-view-group], [header]) {
 
