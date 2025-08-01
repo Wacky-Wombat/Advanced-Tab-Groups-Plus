@@ -1,0 +1,23 @@
+{
+    "id": "advanced-tab-groups-plus",
+    "name": "Advanced Tab Groups +",
+    "description": "Folders for Zen Browser",
+    "js": true,
+    "homepage": "https://github.com/Wacky-Wombat/Advanced-Tab-Groups-Plus",
+    "preferences": "https://raw.githubusercontent.com/Wacky-Wombat/Advanced-Tab-Groups-Plus/main/preferences.json",
+    "style": "https://raw.githubusercontent.com/Wacky-Wombat/Advanced-Tab-Groups-Plus/main/userChrome.css",
+    "readme": "https://raw.githubusercontent.com/Wacky-Wombat/Advanced-Tab-Groups-Plus/main/README.md",
+    "image": "https://raw.githubusercontent.com/Wacky-Wombat/Advanced-Tab-Groups-Plus/main/image.png",
+    "author": "WW",
+    "version": "1.0.0",
+    "tags": [
+        "Zen Browser",
+        "Vertical Tabs",
+        "Tab Groups",
+        "Tab Folders",
+        "ATG"
+    ],
+    "createdAt": "2025-05-13",
+    "updatedAt": "2025-07-29 08:41",
+    "fork": ["zen"]
+}

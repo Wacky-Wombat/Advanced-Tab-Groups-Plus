@@ -1,0 +1,122 @@
+/* ==== Tab groups ==== */
+/* https://github.com/Wacky-Wombat/Advanced-Tab-Groups-Plus */
+/* ====== V1.0.0 ====== */
+
+
+:root {
+  /* starting from root for highest specificity */
+
+  /*** -----------------------------------------------------------------------
+   Nicer tabgroup search popup
+  ----------------------------------------------------------------------- ***/
+
+  & #tab-group-tabs-popup .tabs-list-header {
+    background: transparent !important;
+    border-bottom: none;
+  }
+
+  & #tab-group-tabs-popup .tabs-list-icon {
+    color: currentColor !important;
+    -moz-context-properties: fill, fill-opacity;
+    fill: var(--toolbarbutton-icon-fill);
+  }
+
+  & #tab-group-tabs-popup #zen-group-tabs-list-search {
+    /* The following declarations should be removed from ATG's chrome.css so it doesn't have to be overwritten */
+    background-color: var(--input-bgcolor, Field) !important;
+    border: 1px solid var(--input-border-color) !important;
+    /*outline: var(--focus-outline) !important;*/
+    color: var(--input-color, FieldText) !important;
+    /* */
+    flex: 1;
+    margin-inline-start: 10px !important;
+    border-radius: var(--toolbarbutton-border-radius);
+
+    &:where(:focus-visible) {
+      outline: var(--focus-outline) !important;
+      outline-offset: var(--focus-outline-inset) !important;
+    }
+  }
+
+
+  /*** -----------------------------------------------------------------------
+   Optimizing button and arrow display
+  ----------------------------------------------------------------------- ***/
+
+  & tab-group {
+    &:not([split-view-group], [header]) {
+
+
+      @media (-moz-bool-pref: "zen.view.sidebar-expanded") {
+        @media (-moz-bool-pref: "tab.groups.add-arrow") {
+
+          & .tab-group-label-container {
+            & > label::after {
+              right: 10px !important;
+              transform-origin: center !important;
+              opacity: 1 !important;
+
+              @media not (-moz-bool-pref: "tab.groups.disable-animations") {
+                transition: background-color 0.3s ease-in-out, outline-color 0.3s ease-in-out, opacity 0.3s ease-in-out !important;
+              }
+            }
+          }
+
+          &:hover {
+            & .tab-group-label-container {
+              & > label::after {
+                display: block !important;
+
+                @media not (-moz-bool-pref: "tab.groups.add-arrow-first") {
+                  opacity: 0 !important;
+                }
+              }
+            }
+          }
+
+          &[collapsed] {
+            & .tab-group-label-container {
+              & > label::after {
+                transform: translateY(-50%) rotate(90deg) !important;
+              }
+            }
+          }
+        }
+      }
+
+      & .tab-group-action-button,
+      & .tab-group-tabs-button {
+        display: flex !important;
+        opacity: 0 !important;
+        transition-delay: 0.5s !important;
+        z-index: 1;
+        min-width: 32px !important;
+        max-width: 32px !important;
+      }
+
+      & .tab-group-tabs-button {
+        transition-delay: 0.75s !important;
+      }
+
+      @media (-moz-bool-pref: "zen.view.sidebar-expanded") {
+        &:hover {
+
+          & .tab-group-action-button,
+          & .tab-group-tabs-button {
+            padding-left: var(--toolbarbutton-inner-padding) !important;
+            padding-right: var(--toolbarbutton-inner-padding) !important;
+            opacity: 1 !important;
+
+            @media not (-moz-bool-pref: "tab.groups.disable-animations") {
+              transition: background-color 0.3s ease-in-out, outline-color 0.3s ease-in-out, opacity 0.3s ease-in-out !important;
+              transition-delay: 0s !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media not (-moz-bool-pref: "tab.groups.add-arrow-first") {}

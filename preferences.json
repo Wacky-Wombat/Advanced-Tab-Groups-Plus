@@ -1,0 +1,13 @@
+[
+  {
+    "property": "tab.groups.add-arrow",
+    "type": "checkbox",
+    "label": "Adds an arrow icon to tab folder.",
+    "default": "true"
+  },
+  {
+    "property": "tab.groups.add-arrow-first",
+    "type": "checkbox",
+    "label": "Displays the arrow in front of folder icon."
+  }
+]
