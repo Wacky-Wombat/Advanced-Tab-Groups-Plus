@@ -1,7 +1,7 @@
 {
     "id": "advanced-tab-groups-plus",
     "name": "Advanced Tab Groups +",
-    "description": "Add-on for Advanced Tab Groups mod.",
+    "description": "This mod slightly polishes the appearance and behavior of Advanced Tab Groups.",
     "js": true,
     "homepage": "https://github.com/Wacky-Wombat/Advanced-Tab-Groups-Plus",
     "preferences": "https://raw.githubusercontent.com/Wacky-Wombat/Advanced-Tab-Groups-Plus/main/preferences.json",
@@ -24,3 +24,4 @@
     ]
 
 }
+
