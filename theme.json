@@ -9,7 +9,7 @@
     "readme": "https://raw.githubusercontent.com/Wacky-Wombat/Advanced-Tab-Groups-Plus/main/README.md",
     "image": "https://raw.githubusercontent.com/Wacky-Wombat/Advanced-Tab-Groups-Plus/main/image.png",
     "author": "WW",
-    "version": "1.0.9",
+    "version": "1.0.11",
     "tags": [
         "Zen Browser",
         "Vertical Tabs",
@@ -19,5 +19,7 @@
     ],
     "createdAt": "2025-08-01",
     "updatedAt": "2025-08-01 10:11",
-    "fork": ["zen"]
+    "fork": [
+        "zen"
+    ]
 }
