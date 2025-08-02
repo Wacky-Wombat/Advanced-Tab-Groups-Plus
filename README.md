@@ -19,7 +19,7 @@ It provides …
   - … a stabilzed button display/behavior to avoid element shifting (on hover/unhover)
 * … a "calmer" and more accessible and subtle search popup (applying default styles), avoiding unreadable text \
 <img src="https://github.com/Wacky-Wombat/Advanced-Tab-Groups-Plus/blob/main/images/search-popup-old.png" width="" alt=""> <img src="https://github.com/Wacky-Wombat/Advanced-Tab-Groups-Plus/blob/main/images/search-popup-new.png" width="" alt=""> 
-(coming soon)
+
 ## More Pictures
 ### Tab groups without background
 <img src="https://github.com/Wacky-Wombat/Advanced-Tab-Groups-Plus/blob/main/images/tab-group-plain-arrow-last.png" width="330" alt=""> <img src="https://github.com/Wacky-Wombat/Advanced-Tab-Groups-Plus/blob/main/images/tab-group-plain-arrow-last-w-popup.png" width="330" alt=""> <img src="https://github.com/Wacky-Wombat/Advanced-Tab-Groups-Plus/blob/main/images/tab-group-plain-arrow-first.png" width="330" alt="">
@@ -34,6 +34,7 @@ Special thanks to ![Anoms12/12th-devs](https://github.com/12th-devs/Advanced-Tab
 ---
 
 <img src="https://github.com/heyitszenithyt/zen-browser-badges/raw/fb14dcd72694b7176d141c774629df76af87514e/light/zen-badge-light.png" alt="Made For Zen Badge" width="300">
+
 
 
 
