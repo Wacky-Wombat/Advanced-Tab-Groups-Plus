@@ -8,6 +8,7 @@
   {
     "property": "tab.groups.add-arrow-first",
     "type": "checkbox",
-    "label": "Displays the arrow in front of folder icon."
+    "label": "Displays the arrow in front of folder icon.",
+    "margin": "var(--space-small) 0 var(--space-small) 22px"
   }
 ]
