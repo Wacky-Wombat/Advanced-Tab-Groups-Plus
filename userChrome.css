@@ -6,58 +6,90 @@
 
 /*** -----------------------------------------------------------------------
    Nicer tabgroup search popup
-  ----------------------------------------------------------------------- ***/
+  --------------------------------------------------------------------- ***/
 
-#tab-group-tabs-popup .tabs-list-header {
-  background: transparent !important;
-  border-bottom: none;
-}
+#tab-group-tabs-popup {
+  & .tabs-list-header {
+    background: transparent !important;
+    border-bottom: none;
+  }
 
-#tab-group-tabs-popup .tabs-list-icon {
-  color: currentColor !important;
-  -moz-context-properties: fill, fill-opacity;
-  fill: var(--toolbarbutton-icon-fill);
-}
+  & .tabs-list-icon {
+    color: currentColor !important;
+    -moz-context-properties: fill, fill-opacity;
+    fill: var(--toolbarbutton-icon-fill);
+    position: absolute;
+    translate: 0 -2px;
+  }
 
-#tab-group-tabs-popup #zen-group-tabs-list-search {
-  /* The following declarations should be removed from ATG's chrome.css so it doesn't have to be overwritten */
-  background-color: var(--input-bgcolor, Field) !important;
-  border: 1px solid var(--input-border-color) !important;
-  /*outline: var(--focus-outline) !important;*/
-  color: var(--input-color, FieldText) !important;
-  /* */
-  flex: 1;
-  margin-inline-start: 10px !important;
-  border-radius: var(--toolbarbutton-border-radius);
+  & #zen-group-tabs-list-search {
+    /* the following declarations should be removed from ATG's chrome.css so it doesn't have to be overwritten */
+    background-color: var(--input-bgcolor, Field) !important;
+    border: 1px solid var(--input-border-color) !important;
+    color: var(--input-color, FieldText) !important;
+    /* */
+    flex: 1;
+    padding-inline-start: 40px !important;
+    border-radius: var(--toolbarbutton-border-radius);
 
-  &:where(:focus-visible) {
-    outline: var(--focus-outline) !important;
-    outline-offset: var(--focus-outline-inset) !important;
+    &:where(:focus-visible) {
+      outline: var(--focus-outline) !important;
+      outline-offset: var(--focus-outline-inset) !important;
+    }
   }
 }
 
 
+
 /*** -----------------------------------------------------------------------
    Optimizing button and arrow display
-  ----------------------------------------------------------------------- ***/
+  --------------------------------------------------------------------- ***/
 
 tab-group {
   &:not([split-view-group], [header]) {
-
 
     @media (-moz-bool-pref: "zen.view.sidebar-expanded") {
       @media (-moz-bool-pref: "tab.groups.add-arrow") {
 
         & .tab-group-label-container {
-          & > label::after {
-            right: 10px !important;
-            transform-origin: center !important;
-            opacity: 1 !important;
 
-            @media not (-moz-bool-pref: "tab.groups.disable-animations") {
-              transition: background-color 0.3s ease-in-out, outline-color 0.3s ease-in-out, opacity 0.3s ease-in-out !important;
+          /* show buttons as long as one of the group popups is open */
+          & > label:has(~ toolbarbutton[open="true"]) {
+            & ~ toolbarbutton {
+              display: flex !important;
+              opacity: 1 !important;
+
+              &.tab-group-action-button {
+                list-style-image: url("chrome://browser/skin/zen-icons/menu.svg") !important;
+              }
+
+              &.tab-group-tabs-button {
+                list-style-image: url("chrome://browser/skin/zen-icons/search-glass.svg") !important;
+              }
+            }
+
+            &::after {
+              opacity: 0 !important
             }
           }
+
+          & > label {
+
+            margin-inline-start: -26px !important;
+            text-indent: 26px !important;
+
+            &::after {
+              right: 10px !important;
+              transform-origin: center !important;
+              opacity: 1 !important;
+              /*mask-image: url("chrome://global/skin/icons/plus.svg") !important;*/
+
+              @media not (-moz-bool-pref: "tab.groups.disable-animations") {
+                transition: background-color 0.3s ease-in-out, outline-color 0.3s ease-in-out, opacity 0.3s ease-in-out !important;
+              }
+            }
+          }
+
         }
 
         &:hover {
@@ -90,6 +122,10 @@ tab-group {
       z-index: 1;
       min-width: 32px !important;
       max-width: 32px !important;
+
+      &[open="true"] {
+        opacity: 1 !important;
+      }
     }
 
     & .tab-group-tabs-button {
@@ -116,10 +152,24 @@ tab-group {
 }
 
 
+tab-group {
+  &:not([split-view-group], [header]) {
+
+    @media (-moz-bool-pref: "zen.view.sidebar-expanded") {
+      @media (-moz-bool-pref: "tab.groups.add-arrow") {
+
+        & .tab-group-label-container {}
+      }
+    }
+  }
+}
+
+
 @media (-moz-bool-pref: "tab.groups.add-arrow-first") {
+
+  /* make arrow and folder icon clickable, too */
   tab-group {
     &:not([split-view-group], [header]) {
-
 
       @media (-moz-bool-pref: "zen.view.sidebar-expanded") {
         @media (-moz-bool-pref: "tab.groups.add-arrow") {
@@ -127,9 +177,14 @@ tab-group {
           & .tab-group-label-container {
             padding-inline-start: 14px;
 
-            & > label::after {
-              right: auto !important;
-              left: 4px;
+            & > label {
+              margin-inline-start: -40px !important;
+              text-indent: 40px !important;
+
+              &::after {
+                right: auto !important;
+                left: 4px;
+              }
             }
           }
         }
