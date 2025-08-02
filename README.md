@@ -12,4 +12,4 @@ Special thanks to ![Anoms12/12th-devs](https://github.com/12th-devs/Advanced-Tab
 
 ---
 
-<img src="https://github.com/heyitszenithyt/zen-browser-badges/raw/fb14dcd72694b7176d141c774629df76af87514e/light/zen-badge-light.png" alt="Made For Zen Badge">
+<img src="https://github.com/heyitszenithyt/zen-browser-badges/raw/fb14dcd72694b7176d141c774629df76af87514e/light/zen-badge-light.png" alt="Made For Zen Badge" width="300">
