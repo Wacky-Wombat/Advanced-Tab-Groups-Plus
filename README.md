@@ -2,9 +2,12 @@
 
 CSS for Zen Browser's Tab Groups using `userChrome.css`. 
 
-This is a css mod for the Zen mod ![Advanced Tab Groups](https://github.com/Anoms12/Advanced-Tab-Groups/blob/V2.0.0/image.png).
+This is a css mod for the Zen mod ![Advanced Tab Groups](https://github.com/Anoms12/Advanced-Tab-Groups/blob/V2.0.0/image.png). <br>
 Creates nicer display of tab group action buttons and popup.
 
+## What it does
+
+(coming soon)
 
 ## Credit  
 
