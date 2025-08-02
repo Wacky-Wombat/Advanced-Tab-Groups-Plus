@@ -69,7 +69,10 @@ tab-group {
             }
 
             &::after {
-              opacity: 0 !important
+
+              @media not (-moz-bool-pref: "tab.groups.add-arrow-first") {
+                opacity: 0 !important;
+              }
             }
           }
 
